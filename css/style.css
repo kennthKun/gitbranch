@@ -1,0 +1,122 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: black;
+	height: 100%;
+}
+/*最外层的样式*/
+.wrap{
+	width: 200px;
+	height: 200px;
+	margin: 150px auto;
+	position: relative;
+}
+/*包裹图片的容器*/
+.cube{
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	transform: rotateX(-30deg) rotateY(-80deg);
+	/*实现3d效果*/
+	-webkit-transform-style: preserve-3d;	
+	/*添加动画*/
+	-webkit-animation: rotate 6s linear infinite;
+	
+}
+/*动画方法*/
+@-webkit-keyframes rotate{
+	from{transform: rotateX(0deg) rotateY(0deg);}
+	to{transform: rotateX(360deg) rotateY(360deg);}
+}
+.cube div{
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	/*透明度*/
+	opacity: 1;
+}
+/*设置每张图片样式*/
+.cube .pic{
+	width: 200px;
+	height: 200px;
+}
+/*设置每一只图片的位置
+ */
+.cube .out_front{
+	/*图片旋转和位置偏移*/
+	transform: rotateY(0deg) translateZ(100px);
+}
+/*后面*/
+.cube .out_back{
+	transform: translateZ(-100px) rotateY(180deg);
+}
+/*左边*/
+.cube .out_left{
+	transform: rotateY(90deg) translateZ(100px);
+}
+.cube .out_right{
+	transform: rotateY(-90deg) translateZ(100px);
+}
+.cube .out_top{
+	transform: rotateX(90deg) translateZ(100px);
+}
+.cube .out_bottom{
+	transform: rotateX(-90deg) translateZ(100px);
+}
+/*鼠标放上去展开 translateZ(200px)位移200px就可以了*/
+.cube:hover .out_front{
+	transform: rotateY(0deg) translateZ(200px);
+}
+.cube:hover .out_back{
+   	transform: translateZ(-200px) rotateY(180deg);
+}
+.cube:hover .out_left{
+	transform: rotateY(90deg) translateZ(200px);
+}
+.cube:hover .out_right{
+		transform: rotateY(-90deg) translateZ(200px);
+}
+.cube:hover .out_top{
+	transform: rotateX(90deg) translateZ(200px);
+}
+.cube:hover .out_bottom{
+		transform: rotateX(-90deg) translateZ(200px);
+}
+
+
+/*设置小的立方体的样式*/
+.cube span{
+	/*行内元素转化为块元素*/
+	display: block;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 50px;
+	left: 50px;	
+}
+/*设置每张的图片的大小*/
+.cube .in_pic{
+	width: 100px;
+	height: 100px;
+}
+/*改变角度和位移*/
+.cube .in_front{
+	transform: rotateY(0deg) translateZ(50px);
+}
+.cube .in_back{
+	transform: rotateY(-180deg) translateZ(50px);
+}
+.cube .in_left{
+	transform: rotateY(90deg) translateZ(50px);
+}
+.cube .in_right{
+	transform: rotateY(-90deg) translateZ(50px);
+}
+.cube .in_top{
+	transform: rotateX(90deg) translateZ(50px);
+}
+.cube .in_bottom{
+	transform: rotateX(-90deg) translateZ(50px);
+}

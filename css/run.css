@@ -1,0 +1,120 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: black;
+}
+/*整个全部*/
+.person{
+	width: 200px;
+	height: 400px;
+	position: absolute;
+	left: 0px;
+	top: 100px;
+	-webkit-animation: runAnimate 2s linear infinite;
+	/*来回*/
+	-webkit-animation-direction: alternate;
+	transform: rotate(-45deg);
+}
+@-webkit-keyframes runAnimate{
+	from{left: 0px;}
+	to{left: 1000px;}
+}
+.head{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	margin: 0 auto;
+	border: 3px solid white;
+	/*transform: rotate(-45deg);*/
+}
+.eye{
+	width: 60px;
+	height: 60px;
+	border: solid white;
+	border-radius: 50%;
+	position: absolute;
+	top: 60px;
+}
+.left{
+	left: 20px;
+}
+.right{
+	left: 120px;
+}
+.eyeball{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: red;
+	position: absolute;
+	left: 20px;
+	top: 20px;
+}
+/*身体*/
+.body{
+	width: 3px;
+	height: 140px;
+	margin: 0 auto;
+	background: white;
+}
+/*胳膊和腿的宽度和高度*/
+.hand,.foot{
+	width: 80px;
+	height: 100px;
+}
+.hand{
+	border-left: 3px solid white;
+	border-bottom: 3px solid white;
+	position: absolute;
+	left: 100px;
+	top: 205px;
+	/*允许改变转化元素的位置（中心点）*/
+	transform-origin: 0% 0%;
+}
+.handLeft{
+	transform: rotate(45deg);
+	/*添加动画*/
+	-webkit-animation: HLaniamte 1s linear infinite;
+}
+@-webkit-keyframes HLaniamte{
+	0%{transform: rotateZ(45deg);}
+	50%{transform: rotateZ(-45deg);}
+	100%{transform: rotateZ(45deg);}
+}
+.handRight{
+	transform: rotate(-45deg);
+	-webkit-animation: HRaniamte 1s linear infinite;
+}
+@-webkit-keyframes HRaniamte{
+	0%{transform: rotateZ(-45deg);}
+	50%{transform: rotateZ(45deg);}
+	100%{transform: rotateZ(-45deg);}
+}
+.foot{
+	border-right: 3px solid white;
+	border-bottom: 3px solid white;
+	position: absolute;
+	top: 345px;
+	left: 19px;
+	transform-origin: 100% 0%;
+}
+.footLeft{
+	transform: rotate(45deg);
+	-webkit-animation: fLaniamte 1s linear infinite;
+}
+@-webkit-keyframes fLaniamte{
+	0%{transform: rotateZ(45deg);}
+	50%{transform: rotateZ(-70deg);}
+	100%{transform: rotateZ(45deg);}
+}
+.footRight{
+	transform: rotate(-70deg);
+	-webkit-animation: FRanimate 1s linear infinite;
+}
+@-webkit-keyframes FRanimate{
+	0%{transform: rotateZ(-70deg);}
+	50%{transform: rotateZ(45deg);}
+	100%{transform: rotateZ(-45deg);}
+}
